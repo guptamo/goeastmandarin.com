@@ -1,24 +1,12 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const BabiliPlugin = require('babili-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const BrowserPlugin = require('webpack-browser-plugin')
 
 const cssModulesConfig = {
     modules: true,
     localIdentName: "[name]__[local]___[hash:base64:5]",
-}
-
-exports.sourceMap = function({type}){
-    return {
-        devtool: type,
-    }
-}
-
-exports.minifyJS = function() {
-    return {
-        plugins: [
-            new BabiliPlugin(),
-        ],
-    }
 }
 
 exports.cssLoaders = [
@@ -36,6 +24,35 @@ exports.cssLoaders = [
     },
 ]
 
+exports.sourceMap = function({type}){
+    return {
+        devtool: type,
+    }
+}
+
+exports.setFreeVariable = function({key, value}){
+    const env = {}
+    env[key] = JSON.stringify(value)
+
+    return {
+        plugins:[
+            new webpack.DefinePlugin(env),
+        ],
+    }
+}
+
+exports.minifyJS = function() {
+    return {
+        plugins: [
+            new BabiliPlugin(),
+            new CompressionPlugin({
+                algorithm: "gzip",
+                test: /\.js$/,
+            }),
+        ],
+    }
+}
+
 exports.devServer = function({host, port} = {}){
     return {
         devServer: {
@@ -50,8 +67,17 @@ exports.devServer = function({host, port} = {}){
             plugins: [
                 new webpack.HotModuleReplacementPlugin(),
                 new webpack.NamedModulesPlugin(),
+                new BrowserPlugin({
+                    browser: "Safari"
+                })
             ],
         }
+    }
+}
+
+exports.autoBrowserLaunch = function({browser} = {browser: "Chrome"}){
+    return {
+        plugins: [new BrowserPlugin({browser})],
     }
 }
 
