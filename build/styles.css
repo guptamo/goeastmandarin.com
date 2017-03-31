@@ -1,6 +1,58 @@
-.app__test___vCmVt{
-    background-color: blue;
+.app__nav___3WCCh {
+    width: 100%;
+    background-color: red;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 5%;
+    box-sizing: border-box;
+    position: fixed;
+}
+
+.app__nav___3WCCh > * {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+
+.app__logo___QASaI {
+    margin: 15px;
+    min-height: 35px;
+    min-width: 130px;
+    background-image: url(./images/GoEastLogotypeWhite.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.app__navList___1KZDg {
+    margin: 0;
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1.1em;
+}
+
+.app__navList___1KZDg > li {
+    padding: 10px 20px 10px 10px;
     color: white;
-    font-size: 20px;
-    padding: 20px;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: right;
+}
+
+body{
+    margin: 0;
+}
+
+:root{
+    font-family: "source-han-sans-simplified-c", sans-serif;
+    font-size: 16px;
 }
