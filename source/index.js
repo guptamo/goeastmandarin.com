@@ -3,24 +3,29 @@ import logo from './images/GoEastLogotypeWhite.svg'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Nav from './components/nav'
+import Section from './components/section'
 
-const Nav = ({style}) => {
+const App = () => {
     return (
-        <nav className={style.nav}>
-            <div className={style.logo}></div>
-            <ul className={style.navList}>
-                <li>Pricing</li>
-                <li>Blog</li>
-                <li>Events</li>
-                <li>About Us</li>
-                <li>Sign In</li>
-            </ul>
-        </nav>
+        <div>
+            <Nav />
+            <Section bgColor="midBlue">
+                <h1>The <br/>
+            Largest <br/>
+        Title <br/>
+    Ever <br/></h1>
+            </Section>
+            <Section bgColor="goeastRed">
+                <h1>The <br/>
+            Second <br/>
+        Title <br/>
+    Ever <br/></h1>
+            </Section>
+        </div>
     )
+
 }
 
-Nav.propTypes = {
-    style: React.PropTypes.object,
-}
 
-ReactDOM.render(<Nav style={styles}/>, document.querySelector('.container'))
+ReactDOM.render(<App />, document.querySelector('.container'))

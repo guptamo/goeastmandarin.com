@@ -1,0 +1,50 @@
+:import(./colours.css) {
+    goeastRed: goeastRed;
+    darkBlue: headingBlue;
+    textGrey: textGrey;
+    midBlue: midBlue;
+    lightBlue: lightBlue;
+}
+
+
+.sectionBase {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 45px 15%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.goeastRedSection {
+    composes: sectionBase;
+    background-color: goeastRed;
+    color: white;
+}
+
+
+.darkBlueSection {
+    composes: sectionBase;
+    background-color: darkBlue;
+    color: white;
+}
+
+.textGreySection {
+    composes: sectionBase;
+    background-color: textGrey;
+    color: darkBlue;
+}
+
+.midBlueSection {
+    composes: sectionBase;
+    background-color: midBlue;
+    color: white;
+}
+
+.lightBlueSection {
+    composes: sectionBase;
+    background-color: lightBlue;
+    color: darkBlue;
+}
