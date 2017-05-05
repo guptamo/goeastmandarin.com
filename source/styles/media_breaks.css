@@ -1,0 +1,5 @@
+:export {
+    phone: (max-width: 650px);
+    tablet: (max-width: 1024px);
+    desktop: (max-width: 1920px);
+}

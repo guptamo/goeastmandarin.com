@@ -2,6 +2,12 @@
     goeastRed: goeastRed;
 }
 
+:import(./media_breaks.css) {
+    phone: phone;
+    tablet: tablet;
+    desktop: desktop;
+}
+
 .nav {
     width: 100%;
     background-color: goeastRed;
@@ -40,4 +46,11 @@
     color: white;
     flex-grow: 1;
     text-align: right;
+}
+
+@media screen and phone {
+    .nav {
+        display: none;
+    }
+
 }

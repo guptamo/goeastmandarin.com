@@ -7,6 +7,7 @@ body{
     font-size: 16px;
 }
 
+
 .nav__nav___3Rmct {
     width: 100%;
     background-color: #FF3D2E;
@@ -56,6 +57,13 @@ body{
         -ms-flex-positive: 1;
             flex-grow: 1;
     text-align: right;
+}
+
+@media screen and (max-width: 650px) {
+    .nav__nav___3Rmct {
+        display: none;
+    }
+
 }
 .section__sectionBase___2l5Ri {
     width: 100%;

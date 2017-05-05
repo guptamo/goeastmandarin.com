@@ -69,7 +69,6 @@ module.exports = function(env) {
             loaders: parts.cssLoaders,
         }),
         parts.devServer,
-        parts.sourceMap({type: "cheap-module-source-map"}),
-        parts.autoBrowserLaunch({browser: "Chrome"})
+        parts.sourceMap({type: "cheap-module-source-map"})
     )
 }

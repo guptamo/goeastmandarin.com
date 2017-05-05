@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const BabiliPlugin = require('babili-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
-const BrowserPlugin = require('webpack-browser-plugin')
 
 const cssModulesConfig = {
     modules: true,
@@ -18,7 +17,8 @@ exports.cssLoaders = [
         loader: 'postcss-loader',
         options: {
             plugins: () => ([
-                require('autoprefixer')
+                require('autoprefixer'),
+                require('postcss-modules-values')
             ])
         }
     },
@@ -67,17 +67,8 @@ exports.devServer = function({host, port} = {}){
             plugins: [
                 new webpack.HotModuleReplacementPlugin(),
                 new webpack.NamedModulesPlugin(),
-                new BrowserPlugin({
-                    browser: "Safari"
-                })
             ],
         }
-    }
-}
-
-exports.autoBrowserLaunch = function({browser} = {browser: "Chrome"}){
-    return {
-        plugins: [new BrowserPlugin({browser})],
     }
 }
 
